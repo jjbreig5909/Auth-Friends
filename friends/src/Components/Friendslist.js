@@ -7,24 +7,20 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 class FriendsList extends React.Component {
     state = {
         friends: [],
-        name: "",
-        age: "",
-        email: ""
+        newFriend: {
+            name: "",
+            age: "",
+            email: "",
+            id: 1
+        }
     };
 
-    handleNameChange = e => {
+    handleChange = e => {
         this.setState({
-            name: e.target.value
-        });
-    };
-    handleAgeChange = e => {
-        this.setState({
-            age: e.target.value
-        });
-    };
-    handleEmailChange = e => {
-        this.setState({
-            email: e.target.value
+            newFriend: {
+                ...this.state.newFriend,
+                [e.target.name]: e.target.value
+            }
         });
     };
 
@@ -45,6 +41,17 @@ getData= () => {
     })
 }
 
+addFriend = () => {
+    axiosWithAuth()
+    .post("/friends", this.state.newFriend)
+    .then(res=>{
+        console.log(res);
+        this.setState({
+            friends: res.data
+        })
+    })
+}
+
     render() {
 
         return(
@@ -56,25 +63,25 @@ getData= () => {
                 type="text"
                 name="name"
                 placeholder="Name"
-                value={this.state.name}
-                onChange={this.handleNameChange}
+                value={this.state.newFriend.name}
+                onChange={this.handleChange}
                 />
                 <input
                     type="text"
                     name="age"
                     placeholder="Age"
-                    value={this.state.age}
-                    onChange={this.handleAgeChange}
+                    value={this.state.newFriend.age}
+                    onChange={this.handleChange}
                 />
                 <input
                     type="text"
                     name="email"
                     placeholder="Email"
-                    value={this.state.email}
-                    onChange={this.handleEmailChange}
+                    value={this.state.newFriend.email}
+                    onChange={this.handleChange}
                 />
             </div>
-            <button>Add Friend</button>
+            <button onClick={this.addFriend}>Add Friend</button>
             </div>  
             <div>
                 {this.state.friends.map(friend=>(
