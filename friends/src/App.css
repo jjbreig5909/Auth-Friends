@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding-top: 1%;
+  width: 80%;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+.logo{
+  max-width: 75%;
+  margin-bottom: -8%;
+  margin-top: -5%;
+}
+
+nav{ 
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin-bottom: 5%;
+}
+
+.page-content{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
