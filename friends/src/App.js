@@ -12,8 +12,8 @@ function App() {
       <div className="container">
         <img className="logo" src={logo} />
         <nav>
-          <Link to="/login">Login</Link>
-          <Link to="/protected">Friends List</Link>
+          <Link to="/login" className="nav-link">Login</Link>
+          <Link to="/protected" className="nav-link">Friends List</Link>
         </nav>
         <div className="page-content">
           <Switch>
