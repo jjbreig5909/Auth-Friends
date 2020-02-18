@@ -1,5 +1,7 @@
 import React from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
+import Loader from 'react-loader-spinner'; 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 class LoginForm extends React.Component {
     state = {
@@ -34,23 +36,29 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
+            
                 <form onSubmit={this.login}>
-                    <input
-                        type="text"
-                        name="username"
-                        value={this.state.credentials.username}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={this.state.credentials.password}
-                        onChange={this.handleChange}
-                    />
-                    <button>Log in</button>
+                    <div className="login-form">
+                        <div className="login-inputs">
+                            <input
+                                type="text"
+                                name="username"
+                                placeholder="Username"
+                                value={this.state.credentials.username}
+                                onChange={this.handleChange}
+                            />
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                value={this.state.credentials.password}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    <button>Log In</button>
+                    </div>
                 </form>
-            </div>
+            
         );
     }
 }
