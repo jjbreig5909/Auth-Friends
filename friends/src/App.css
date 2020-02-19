@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding-top: 1%;
+  width: 80%;
+  height: 100vh;
+}
+
+.logo{
+  max-width: 75%;
+  margin-bottom: -8%;
+  margin-top: -5%;
+}
+
+nav{ 
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  font-size: 26px;
+  width: 50%;
+  margin-bottom: 5%;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+nav :visited{
+  text-decoration: none;
+}
+
+.nav-link{
+  text-decoration: none;
+}
+
+.nav-link:visited{
+  text-decoration: none;
+  color: black;
+}
+
+.page-content{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 60%;
+}
+
+.friend-form{
+  width: 80%;
+}
+
+.add-friend{
+  width:100%;
+  margin: auto;
+}
+
+.add-friend-input{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.login-inputs{
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  margin: 10px auto 20px auto;
+}
+
+.login-form{
+  width: 100%;
+}
+
+button{
+  background-color: #06A0D4;
+  border: none;
+  padding:  10px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 25px; 
+}
+
+button:hover{
+  background-color: #E8C847;
+  cursor: pointer;
+  transition: all .3s;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
+form{
+  width: 100%;
+  margin: auto;
+}
+
+.friends-list{
+  width: 100%;
+  height: 100%;
+}
+
+.friend{
+  margin: 15px auto;
+  font-size: 20px; 
+  font-weight: 700;
+  background-color: aliceblue;
+  width: 50%;
+  padding: 5px;
+  box-shadow: black 0px 3px 7px;
+}
